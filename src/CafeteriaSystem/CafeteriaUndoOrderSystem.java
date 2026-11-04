@@ -125,6 +125,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, -1, -1));
 
         removeButton.setText("Remove");
+        removeButton.addActionListener(this::removeButtonActionPerformed);
         jPanel1.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 480, -1, -1));
 
         undoButton.setText("Undo");
@@ -221,6 +222,36 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
     }
     
     }//GEN-LAST:event_addButtonActionPerformed
+
+    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
+
+    int selectedRow = orderTable.getSelectedRow();
+
+    if (selectedRow == -1) {
+
+    JOptionPane.showMessageDialog(
+        this, "Please select an order to remove."
+    );
+
+    return;
+}
+    
+    boolean success = manager.removeOrder(selectedRow);
+
+    if (success) {
+
+    refreshTable();
+
+    statusLabel.setText("Order removed successfully.");
+
+    } else {
+
+    JOptionPane.showMessageDialog(
+        this, "Unable to remove order."
+    );
+}
+    
+    }//GEN-LAST:event_removeButtonActionPerformed
 
     /**
      * @param args the command line arguments
