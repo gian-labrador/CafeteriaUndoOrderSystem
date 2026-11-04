@@ -37,6 +37,27 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
     );
 }
     
+    private void refreshMenuTable() {
+
+    javax.swing.table.DefaultTableModel model =
+        (javax.swing.table.DefaultTableModel)
+        menuTable.getModel();
+
+    model.setRowCount(0);
+
+    for (int i = 0; i < manager.getMenuCount(); i++) {
+
+        OrderItem item = manager.getMenuItem(i);
+
+        Object[] row = {
+            item.getName(),
+            item.getCategory(),
+            String.format("₱%.2f", item.getPrice())
+        };
+
+        model.addRow(row);
+    }
+}
     
     
     @SuppressWarnings("unchecked")
