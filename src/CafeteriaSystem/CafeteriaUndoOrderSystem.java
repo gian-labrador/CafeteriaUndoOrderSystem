@@ -59,7 +59,6 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
     }
 }
     
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -122,6 +121,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 330, 340));
 
         addButton.setText("Add");
+        addButton.addActionListener(this::addButtonActionPerformed);
         jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, -1, -1));
 
         removeButton.setText("Remove");
@@ -168,6 +168,59 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+
+    int selectedRow = menuTable.getSelectedRow();
+
+    if (selectedRow == -1) {
+
+        JOptionPane.showMessageDialog(
+            this, "Please select a product from the menu."
+        );
+
+        return;
+    }
+
+    OrderItem item = manager.getMenuItem(selectedRow);
+
+    if (item == null) {
+
+        JOptionPane.showMessageDialog(
+            this, "Invalid menu selection."
+        );
+
+        return;
+    }
+
+    boolean success = manager.addOrder(
+        item.getName(),
+        item.getPrice(),
+        item.getCategory()
+    );
+
+    if (success) {
+
+        refreshTable();
+
+        nameField.setText("");
+        priceField.setText("");
+        searchField.setText("");
+
+        menuTable.clearSelection();
+
+        statusLabel.setText(
+            "Successfully added: " + item.getName()
+        );
+
+    } else {
+
+        JOptionPane.showMessageDialog(
+            this, "Order list or undo history is full."
+        );
+    }
+    
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
