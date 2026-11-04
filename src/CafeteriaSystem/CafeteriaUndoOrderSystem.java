@@ -88,6 +88,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         jPanel1.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 350, -1));
 
         searchButton.setText("Search");
+        searchButton.addActionListener(this::searchButtonActionPerformed);
         jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
 
         menuTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -274,6 +275,57 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
 }
     
     }//GEN-LAST:event_undoButtonActionPerformed
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+
+    String keyword = searchField.getText().trim();
+
+    if (keyword.isEmpty()) {
+
+        JOptionPane.showMessageDialog(
+            this, "Please enter an item name."
+        );
+
+        return;
+    }
+
+    int index = manager.searchMenu(keyword);
+
+    if (index != -1) {
+
+        menuTable.setRowSelectionInterval(index, index);
+
+        menuTable.scrollRectToVisible(
+            menuTable.getCellRect(index, 0, true)
+        );
+
+        OrderItem item = manager.getMenuItem(index);
+
+        nameField.setText(item.getName());
+
+        priceField.setText(
+            String.valueOf(item.getPrice())
+        );
+
+        statusLabel.setText(
+            "Menu item found: " + item.getName()
+        );
+
+    } else {
+
+        menuTable.clearSelection();
+
+        nameField.setText("");
+        priceField.setText("");
+
+        statusLabel.setText("Menu item not found.");
+
+        JOptionPane.showMessageDialog(
+            this, "Item not found in available menu."
+        );
+    }
+    
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     /**
      * @param args the command line arguments
