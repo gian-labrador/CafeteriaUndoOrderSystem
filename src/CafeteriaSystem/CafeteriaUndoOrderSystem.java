@@ -129,6 +129,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         jPanel1.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 480, -1, -1));
 
         undoButton.setText("Undo");
+        undoButton.addActionListener(this::undoButtonActionPerformed);
         jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, -1, -1));
         jPanel1.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
         jPanel1.add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
@@ -252,6 +253,27 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
 }
     
     }//GEN-LAST:event_removeButtonActionPerformed
+
+    private void undoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoButtonActionPerformed
+
+    boolean success = manager.undo();
+
+    if (success) {
+
+    refreshTable();
+
+    statusLabel.setText(
+        "Last operation successfully undone."
+    );
+
+    } else {
+
+    JOptionPane.showMessageDialog(
+        this, "There are no changes to undo."
+    );
+}
+    
+    }//GEN-LAST:event_undoButtonActionPerformed
 
     /**
      * @param args the command line arguments
