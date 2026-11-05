@@ -85,74 +85,92 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 350, -1));
+        jPanel1.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 350, -1));
 
         searchButton.setText("Search");
         searchButton.addActionListener(this::searchButtonActionPerformed);
-        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 40, -1, -1));
+        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 50, -1, -1));
 
         menuTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Rice", "Food", "₱15.00"},
+                {"Fried Chicken", "Food", "₱45.00"},
+                {"Adobo", "Food", "₱30.00"},
+                {"Pancit", "Food", "₱25.00"},
+                {"Lumpia", "Food", "₱10.00"},
+                {"Hotdog", "Food", "₱10.00"},
+                {"Nuggets", "Food", "₱15.00"},
+                {"Egg", "Food", "₱10.00"},
+                {"Sisig", "Food", "₱35.00"},
+                {"Siomai", "Food", "₱20.00"},
+                {"Buko Juice", "Drink", "₱25.00"},
+                {"Buko Pandan", "Drink", "₱10.00"},
+                {"Gulaman", "Drink", "₱15.00"},
+                {"Juicy Lemon", "Drink", "₱25.00"},
+                {"Coca Cola", "Drink", "₱25.00"},
+                {"Pineapple Juice", "Drink", "₱20.00"},
+                {"Lemonade", "Drink", "₱15.00"},
+                {"Chuckie", "Drink", "₱25.00"},
+                {"Minute Maid", "Drink", "₱15.00"},
+                {"Mango Shake", "Drink", "₱10.00"},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Items", "Category", "Price"
             }
         ));
         jScrollPane1.setViewportView(menuTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 430, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 430, 430));
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Item", "Category", "Price"
             }
         ));
         jScrollPane2.setViewportView(orderTable);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 330, 340));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 290, 370));
 
         addButton.setText("Add");
         addButton.addActionListener(this::addButtonActionPerformed);
-        jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 480, -1, -1));
+        jPanel1.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, -1, -1));
 
         removeButton.setText("Remove");
         removeButton.addActionListener(this::removeButtonActionPerformed);
-        jPanel1.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 480, -1, -1));
+        jPanel1.add(removeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 570, -1, -1));
 
         undoButton.setText("Undo");
         undoButton.addActionListener(this::undoButtonActionPerformed);
-        jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, -1, -1));
-        jPanel1.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
-        jPanel1.add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel1.add(undoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 570, -1, -1));
+        jPanel1.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 120, -1));
+        jPanel1.add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 120, -1));
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         titleLabel.setText("Cafeteria Undo Order System");
         jPanel1.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 460, 80));
 
         nameLabel.setText("Item:");
-        jPanel1.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 70, -1));
+        jPanel1.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 70, -1));
 
         searchLabel.setText("Search Item:");
         jPanel1.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 90, -1));
 
         priceLabel.setText("Price:");
-        jPanel1.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 70, -1));
+        jPanel1.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 70, -1));
 
-        totalLabel.setText("Total: ");
-        jPanel1.add(totalLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 110, -1));
+        totalLabel.setText("Total: ₱0.00");
+        jPanel1.add(totalLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 120, -1));
 
         statusLabel.setText("Ready.");
-        jPanel1.add(statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 100, -1));
+        jPanel1.add(statusLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
