@@ -1,7 +1,7 @@
 
 package CafeteriaSystem;
 
-public class OrderItem {
+public abstract class OrderItem {
     
     private String name;
     private double price;
@@ -16,4 +16,5 @@ public class OrderItem {
     public double getPrice() {
         return price;
     }
+    public abstract String getCategory();
 }
