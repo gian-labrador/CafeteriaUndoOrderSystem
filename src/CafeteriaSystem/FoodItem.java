@@ -7,4 +7,8 @@ public class FoodItem {
         super(name, price);
     }
     
+    @Override
+    public String getCategory() {
+        return "Food";
+    }
 }
