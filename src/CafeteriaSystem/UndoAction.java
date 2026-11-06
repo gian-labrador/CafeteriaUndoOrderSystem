@@ -14,4 +14,8 @@ public class UndoAction {
         this.item = item;
         this.index = index;
     }
+    
+    public String getActionType() {
+        return actionType;
+    }
 }
