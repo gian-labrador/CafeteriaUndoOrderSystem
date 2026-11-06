@@ -55,4 +55,12 @@ public class manageOrder {
         }
     }
 
+    public OrderItem getMenuItem(int index) {
+
+        if (index < 0 || index >= menuCount) {
+            return null;
+        }
+
+        return menu[index];
+    }
 }
