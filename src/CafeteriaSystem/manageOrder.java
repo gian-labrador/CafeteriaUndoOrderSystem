@@ -83,5 +83,34 @@ public class manageOrder {
         return -1;
     }
 
-    
+    public boolean addOrder(String name,
+        double price,
+        String category) {
+
+        if (orders.isFull() || history.isFull()) {
+            return false;
+        }
+
+        OrderItem item;
+
+        if (category.equalsIgnoreCase("Food")
+                || category.equalsIgnoreCase("Foods")) {
+
+            item = new FoodItem(name, price);
+
+        } else {
+
+            item = new DrinkItem(name, price);
+        }
+
+        int index = orders.size();
+
+        UndoAction action =
+                new UndoAction("ADD", item, index);
+
+        history.push(action);
+        orders.add(item);
+
+        return true;
+    }
 }
