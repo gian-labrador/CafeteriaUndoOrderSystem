@@ -63,4 +63,8 @@ public class manageOrder {
 
         return menu[index];
     }
+    
+    public int getMenuCount() {
+        return menuCount;
+    }
 }
