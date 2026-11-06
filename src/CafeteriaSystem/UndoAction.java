@@ -23,4 +23,8 @@ public class UndoAction {
         return item;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
 }
