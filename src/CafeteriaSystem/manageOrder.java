@@ -132,4 +132,27 @@ public class manageOrder {
 
         return true;
     }
+    
+    public boolean undo() {
+
+        if (history.isEmpty()) {
+            return false;
+        }
+
+        UndoAction action = history.pop();
+
+        if (action.getActionType().equals("ADD")) {
+
+            orders.removeAt(action.getIndex());
+
+        } else if (action.getActionType().equals("REMOVE")) {
+
+            orders.insertAt(
+                    action.getIndex(),
+                    action.getItem()
+            );
+        }
+
+        return true;
+    }
 }
