@@ -67,4 +67,21 @@ public class manageOrder {
     public int getMenuCount() {
         return menuCount;
     }
+    
+    public int searchMenu(String keyword) {
+
+        for (int i = 0; i < menuCount; i++) {
+
+            if (menu[i].getName()
+                    .toLowerCase()
+                    .contains(keyword.toLowerCase())) {
+
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    
 }
