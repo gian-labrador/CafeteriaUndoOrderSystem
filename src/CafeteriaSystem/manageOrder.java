@@ -155,4 +155,8 @@ public class manageOrder {
 
         return true;
     }
+    
+    public int searchOrder(String keyword) {
+        return orders.search(keyword);
+    }
 }
