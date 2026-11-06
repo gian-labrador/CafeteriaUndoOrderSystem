@@ -18,4 +18,9 @@ public class UndoAction {
     public String getActionType() {
         return actionType;
     }
+    
+    public OrderItem getItem() {
+        return item;
+    }
+
 }
