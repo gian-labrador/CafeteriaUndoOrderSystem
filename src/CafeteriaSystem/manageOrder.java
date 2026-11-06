@@ -47,4 +47,12 @@ public class manageOrder {
     addMenuItem(new DrinkItem("Water", 10.00));
     }
     
+    private void addMenuItem(OrderItem item) {
+
+        if (menuCount < menu.length) {
+            menu[menuCount] = item;
+            menuCount++;
+        }
+    }
+
 }
