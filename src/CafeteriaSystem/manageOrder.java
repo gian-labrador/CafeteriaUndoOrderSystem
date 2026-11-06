@@ -163,4 +163,17 @@ public class manageOrder {
     public OrderItem getOrder(int index) {
         return orders.get(index);
     }
+    
+    public int getOrderCount() {
+        return orders.size();
+    }
+
+    public double getTotal() {
+        return orders.getTotal();
+    }
+
+    public UndoAction getLastAction() {
+        return history.peek();
+    }
+
 }
