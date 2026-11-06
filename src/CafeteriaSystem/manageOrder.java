@@ -113,4 +113,23 @@ public class manageOrder {
 
         return true;
     }
+    
+    public boolean removeOrder(int index) {
+
+        if (index < 0 || index >= orders.size()
+                || history.isFull()) {
+
+            return false;
+        }
+
+        OrderItem item = orders.get(index);
+
+        UndoAction action =
+                new UndoAction("REMOVE", item, index);
+
+        history.push(action);
+        orders.removeAt(index);
+
+        return true;
+    }
 }
