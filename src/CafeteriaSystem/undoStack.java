@@ -32,5 +32,27 @@ public class undoStack {
         return true;
     }
 
-    
+    public UndoAction pop() {
+
+        if (isEmpty()) {
+            return null;
+        }
+
+        UndoAction action = stack[top];
+
+        stack[top] = null;
+        top--;
+
+        return action;
+    }
+
+    public UndoAction peek() {
+
+        if (isEmpty()) {
+            return null;
+        }
+
+        return stack[top];
+    }
+
 }
