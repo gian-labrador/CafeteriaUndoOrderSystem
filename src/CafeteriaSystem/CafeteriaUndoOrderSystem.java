@@ -103,6 +103,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
                 {"Egg", "Food", "₱10.00"},
                 {"Sisig", "Food", "₱35.00"},
                 {"Siomai", "Food", "₱20.00"},
+                {"Burger", "Food", "₱30.00"},
                 {"Buko Juice", "Drink", "₱25.00"},
                 {"Buko Pandan", "Drink", "₱10.00"},
                 {"Gulaman", "Drink", "₱15.00"},
@@ -113,8 +114,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
                 {"Chuckie", "Drink", "₱25.00"},
                 {"Minute Maid", "Drink", "₱15.00"},
                 {"Mango Shake", "Drink", "₱10.00"},
-                {null, null, null},
-                {null, null, null}
+                {"Water", "Drink", "₱5.00"}
             },
             new String [] {
                 "Items", "Category", "Price"
