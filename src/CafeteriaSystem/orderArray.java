@@ -30,7 +30,7 @@ public class orderArray {
 
         return true;
     }
-    
+
     public OrderItem get(int index) {
 
         if (index < 0 || index >= count) {
@@ -61,7 +61,7 @@ public class orderArray {
 
         return removed;
     }
-    
+
     public boolean insertAt(int index, OrderItem item) {
 
         if (isFull() || index < 0 || index > count) {
@@ -77,5 +77,27 @@ public class orderArray {
 
         return true;
     }
-    
+
+    public int search(String keyword) {
+
+        for (int i = 0; i < count; i++) {
+
+            if (items[i].getName().equalsIgnoreCase(keyword)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public double getTotal() {
+
+        double total = 0;
+
+        for (int i = 0; i < count; i++) {
+            total += items[i].getPrice();
+        }
+
+        return total;
+    }
 }
