@@ -32,7 +32,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         model.addRow(row);
     }
 
-    totalLabel1.setText(
+    totalLabel.setText(
         String.format("Total: ₱%.2f", manager.getTotal())
     );
 }

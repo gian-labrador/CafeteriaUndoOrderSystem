@@ -1,7 +1,7 @@
 
 package CafeteriaSystem;
 
-public class FoodItem {
+public class FoodItem extends OrderItem{
     
     public FoodItem(String name, double price) {
         super(name, price);
