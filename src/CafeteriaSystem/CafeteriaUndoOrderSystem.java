@@ -233,6 +233,7 @@ public class CafeteriaUndoOrderSystem extends javax.swing.JFrame {
         HeaderBG.add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, 80));
 
         searchField.setBackground(new java.awt.Color(153, 0, 0));
+        searchField.setForeground(new java.awt.Color(255, 255, 255));
         searchField.setBorder(null);
         searchField.addActionListener(this::searchFieldActionPerformed);
         HeaderBG.add(searchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, 260, 20));
